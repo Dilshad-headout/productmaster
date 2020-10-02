@@ -16,7 +16,7 @@ from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -77,16 +77,16 @@ WSGI_APPLICATION = 'headout.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
-        #'rest_framework.permissions.AllowAny' -- to allow without auth and restrict from views
+        # 'rest_framework.permissions.AllowAny' -- to allow without auth and restrict from views
     )
 }
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-default_dburl = 'sqlite:///' +os.path.join(BASE_DIR, 'db.sqlite3')
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = {'default': config('DATABASES_URL', default=default_dburl, cast=dburl),}
+DATABASES = {'default': config('DATABASES_URL', default=default_dburl, cast=dburl), }
 
 # DATABASES = {
 #     'default': {
@@ -98,7 +98,7 @@ DATABASES = {'default': config('DATABASES_URL', default=default_dburl, cast=dbur
 #         'PORT': '3306',
 #     }
 # }
-#Diavolos6098
+# Diavolos6098
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,7 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -131,7 +130,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

@@ -1,1 +1,1 @@
-web: gunicorn headout.wsgi --log-file
+web: gunicorn headout.wsgi --log-file -
