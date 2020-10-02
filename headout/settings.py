@@ -11,22 +11,23 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from decouple import config
+from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5+t63qbi06!=vam%r_%x%&1u*5412nmej$$d909$-#04a50q97'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = [
+    'headoutproductmaster.herokuapp.com'
+]
 
-ALLOWED_HOSTS = []
-
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Application definition
 
@@ -83,16 +84,20 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'headout',
-        'USER': 'dilshad',
-        'PASSWORD': 'headout',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
+default_dburl = 'sqlite:///' +os.path.join(BASE_DIR, 'db.sqlite3')
+
+DATABASES = {'default': config('DATABASES_URL', default=default_dburl, cast=dburl),}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'headout',
+#         'USER': 'dilshad',
+#         'PASSWORD': 'headout',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
 #Diavolos6098
 
 # Password validation
