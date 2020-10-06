@@ -52,6 +52,7 @@ class Product(models.Model):
 
     listing_issue = models.CharField(max_length=25, choices=listing_issues_types, default='null')
     listing_status = models.CharField(max_length=25, choices=listing_status_types, default='null')
+    test_field = models.TextField(max_length=255, blank=True, null=True)
     Comments = models.TextField(max_length=255, blank=True, null=True)
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
     # user = models.ForeignKey(User)
