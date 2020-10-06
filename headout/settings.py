@@ -98,7 +98,6 @@ DATABASES = {'default': config('DATABASES_URL', default=default_dburl, cast=dbur
 #         'PORT': '3306',
 #     }
 # }
-# Diavolos6098
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -138,5 +137,4 @@ STATIC_URL = '/static/'
 
 # password
 # username = supplyops
-# mail = supplyops@headout.com
-# pass = productmaster123
+# pass = headout123
